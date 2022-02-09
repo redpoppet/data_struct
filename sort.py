@@ -1,3 +1,49 @@
+#coding:utf-8
+
+# insert sort
+def insert_sort(lst):
+    for i in range(1,len(lst)):
+        item = lst[i]
+        j = i -1 
+        while j >=0 and lst[j]>item:
+            lst[j+1] = lst[j]
+            j -= 1
+        lst[j+1] = item
+    return lst
+
+ls = [22, 21, 34, 65, 12, 89, 3, 9, 66]
+print(ls)
+print('insert sort')
+print(insert_sort(ls))
+
+
+def dubble_sort(lst):
+    n = len(lst) -1 
+    for i in range(n):
+        for j in range(n):
+            if lst[j+1] > lst[j]:
+                lst[j+1],lst[j] = lst[j],lst[j+1]
+        j -= 1 
+    return lst 
+
+ls = [22, 21, 34, 65, 12, 89, 3, 9, 66]
+print('dubble sort')
+print(dubble_sort(ls))
+
+
+
+def select_sort(lst):
+    n  = len(lst)
+    for i in range(n):
+        for j in range(i,n):
+            if lst[j]< lst[i]:
+                lst[j],lst[i] = lst[i],lst[j]
+    return lst
+
+ls = [22, 21, 34, 65, 12, 89, 3, 9, 66]
+print('select sort')
+print(select_sort(ls))
+
 
 # quick sort by 
 def quick_sort(lst):
@@ -7,7 +53,7 @@ def quick_sort(lst):
         quick_sort([i for i in lst[1:] if i >= lst[0]])
 
 ls = [22, 21, 34, 65, 12, 89, 3, 9, 66]
-print(ls)
+print('quick sort')
 print(quick_sort(ls))
 
 
@@ -32,9 +78,10 @@ def qsort(lst,left,right):
     qsort(lst,start+1,right)
     qsort(lst,left,start-1)
 
-lst = [2,2,3,4,7,9,3,2,3,1]
-qsort(lst,0,len(lst)-1)
-print(lst)
+ls = [22, 21, 34, 65, 12, 89, 3, 9, 66]
+qsort(ls,0,len(ls)-1)
+print('quick sort')
+print(ls)
 
 
 
@@ -64,5 +111,6 @@ def merge_sort(lst):
 
 
 
-lst = [2,2,3,4,7,9,3,2,3,1]
-print(merge_sort(lst))
+ls = [22, 21, 34, 65, 12, 89, 3, 9, 66]
+print('merge sort')
+print(merge_sort(ls))
